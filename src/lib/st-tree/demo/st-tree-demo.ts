@@ -88,7 +88,7 @@ export class StTreeDemoComponent {
    }
 
    onSelectNode(nodeChange: StNodeTreeChange): void {
-      console.log('selected node', nodeChange);
+      console.log('select node', nodeChange);
       let node: StNodeTree;
       if (this.selectedPath) {
          node = _get<StNodeTree>(this.tree, this.selectedPath, this.tree);
