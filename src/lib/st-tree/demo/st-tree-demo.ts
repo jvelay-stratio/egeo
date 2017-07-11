@@ -27,7 +27,21 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
    selector: 'st-tree-demo',
-   templateUrl: 'st-tree-demo.html'
+   templateUrl: 'st-tree-demo.html',
+   styles: [`
+      .tree-background-A {
+         background-color: #f5f5f5;
+         padding: 20px;
+      }
+      .tree-background-B {
+         background-color: #efefef;
+         padding: 20px;
+      }
+      .tree-container {
+         overflow: auto;
+         height: 500px;
+      }
+   `]
 })
 
 export class StTreeDemoComponent {
@@ -70,7 +84,6 @@ export class StTreeDemoComponent {
    };
 
    public maxLevel: number = 3;
-   public root: boolean = false;
 
    public notificationChangeStream: Observable<StNodeTreeChange>;
    private subject: Subject<StNodeTreeChange> = new Subject<StNodeTreeChange>();
