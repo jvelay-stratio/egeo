@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {
    cloneDeep as _cloneDeep,
    get as _get,
@@ -177,7 +177,7 @@ export class StTreeDemoComponent implements OnInit {
          childNodes = [];
          for (let i: number = 0; i < levelNodes; i++) {
             // Only generate childrens for the first child
-            childNodes.push(this.generateTree(i === 0 ? levels - 1 : 0, levelNodes, `${nodeName}-${startNode}.${i}`, startNode + 1));
+            childNodes.push(this.generateTree(i === 0 ? levels - 1 : 0, levelNodes, `${nodeName} (${startNode}.${i})`, startNode + 1));
          }
       }
       return this.generateNode(nodeName, childNodes);
